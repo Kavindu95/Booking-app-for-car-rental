@@ -22,23 +22,24 @@
             background: white;
             border-radius: 10px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
         }
         form {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 15px;
         }
         label {
             font-weight: bold;
-            text-align: left;
         }
         select, input, button {
             width: 100%;
-            padding: 10px;
+            padding: 10px 0; /* Removed left padding */
             margin-top: 5px;
             border: 1px solid #ccc;
             border-radius: 5px;
             font-size: 16px;
+            text-indent: 0px; /* Ensures no left padding */
         }
         button {
             background-color: green;
@@ -56,8 +57,8 @@
         }
         .business-name {
             font-size: 28px;
-            font-weight: bold; /* Bold the text */
-            color: rgb(191, 232, 12);
+            font-weight: bold;
+            color: rgb(229, 39, 39);
             padding: 10px;
             border-radius: 5px;
             margin-bottom: 20px;
@@ -73,7 +74,8 @@
                 padding: 15px;
             }
             h2 {
-                font-size: 20px;
+                font-size: 24px;
+                margin-bottom: 20px;
             }
             .business-name {
                 font-size: 24px;
@@ -85,7 +87,7 @@
             }
             select, input, button {
                 font-size: 14px;
-                padding: 8px;
+                padding: 8px 0; /* Ensuring no left padding */
             }
         }
     </style>
@@ -96,22 +98,22 @@
     </div>
 
     <div class="container">
-        <h2>Book Your Car</h2>
+        <h2 style="text-align: center;">Book Your Car</h2>
         <form id="bookingForm">
             <label for="vehicle">Select Vehicle:</label>
             <select id="vehicle" required>
-                <option value="2017 Wagon R FX - White">2017 Wagon R FX (White)</option>
-                <option value="2018 Stingray - Black">2018 Stingray (Black)</option>
-                <option value="2018 Stingray - White">2018 Stingray (White)</option>
-                <option value="Elite - White">Elite (White)</option>
-                <option value="Micro Trend">Micro Trend</option>
-                <option value="Indian Alto">Indian Alto</option>
-                <option value="Japan Alto">Japan Alto</option>
-                <option value="Mitsubishi Every Van">Mitsubishi Every Van</option>
-                <option value="Glory Van 7 Seater">Glory Van (7 Seater)</option>
-                <option value="2015 FZ Wagon R - White">2015 FZ Wagon R (White)</option>
-                <option value="2018 FZ Wagon R - Dark Purple">2018 FZ Wagon R (Dark Purple)</option>
-                <option value="Prius 2013 - White">Prius 2013 (White)</option>
+                <option value="2017 Wagon R FX - White">2017 Wagon R FX (White) 6000 LKR</option>
+                <option value="2018 Stingray - Black">2018 Stingray (Black) 6500LKR</option>
+                <option value="2018 Stingray - White">2018 Stingray (White) 6500LKR</option>
+                <option value="Elite - White">Elite (White) 5000LKR</option>
+                <option value="Micro Trend">Micro Trend 4000LKR</option>
+                <option value="Indian Alto">Indian Alto 4500LKR</option>
+                <option value="Japan Alto">Japan Alto 5000LKR</option>
+                <option value="Mitsubishi Every Van">Mitsubishi Every Van 7000LKR</option>
+                <option value="Glory Van 7 Seater">Glory Van (7 Seater) 8500LKR</option>
+                <option value="2015 FZ Wagon R - White">2015 FZ Wagon R (White) 6000LKR</option>
+                <option value="2018 FZ Wagon R - Dark Purple">2018 FZ Wagon R (Dark Purple) 6500LKR</option>
+                <option value="Prius 2013 - White">Prius 2013 (White) 9500LKR</option>
             </select>
 
             <label for="name">Your Name:</label>
