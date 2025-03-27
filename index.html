@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rent a Car Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 20px;
+            background-image: url('https://www.autorentals.gr/sliders/slide1-917117.jpg'); /* Add your background image URL here */
+            background-size: cover;
+            background-position: center;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            padding: 45px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        label {
+            font-weight: bold;
+            text-align: left;
+        }
+        select, input, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            background-color: green;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        button:hover {
+            background-color: darkgreen;
+        }
+        h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .business-name {
+            font-size: 28px;
+            font-weight: bold; /* Bold the text */
+            color: rgb(28, 27, 26);
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        .note {
+            font-size: 16px;
+            color: #555;
+            margin-top: 15px;
+            font-style: italic;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="business-name">
+        Smart Rent a Car Matara
+    </div>
+
+    <div class="container">
+        <h2>Book Your Car</h2>
+        <form id="bookingForm">
+            <label for="vehicle">Select Vehicle:</label>
+            <select id="vehicle" required>
+                <option value="2017 Wagon R FX - White">2017 Wagon R FX (White)</option>
+                <option value="2018 Stingray - Black">2018 Stingray (Black)</option>
+                <option value="2018 Stingray - White">2018 Stingray (White)</option>
+                <option value="Elite - White">Elite (White)</option>
+                <option value="Micro Trend">Micro Trend</option>
+                <option value="Indian Alto">Indian Alto</option>
+                <option value="Japan Alto">Japan Alto</option>
+                <option value="Mitsubishi Every Van">Mitsubishi Every Van</option>
+                <option value="Glory Van 7 Seater">Glory Van (7 Seater)</option>
+                <option value="2015 FZ Wagon R - White">2015 FZ Wagon R (White)</option>
+                <option value="2018 FZ Wagon R - Dark Purple">2018 FZ Wagon R (Dark Purple)</option>
+                <option value="Prius 2013 - White">Prius 2013 (White)</option>
+            </select>
+
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" required>
+
+            <label for="phone">Your Phone:</label>
+            <input type="tel" id="phone" required>
+            
+            <label for="startDate">Start Date:</label>
+            <input type="date" id="startDate" required>
+            
+            <label for="endDate">End Date:</label>
+            <input type="date" id="endDate" required>
+
+            <button type="button" onclick="sendBooking()">Book Now</button>
+        </form>
+
+        <p class="note" id="confirmationMessage">Booking request received! Our team will contact you ASAP to confirm the availability of your chosen vehicle.</p>
+    </div>
+
+    <script>
+        function sendBooking() {
+            let vehicle = document.getElementById('vehicle').value;
+            let name = document.getElementById('name').value;
+            let phone = document.getElementById('phone').value;
+            let startDate = document.getElementById('startDate').value;
+            let endDate = document.getElementById('endDate').value;
+            
+            if (!name || !phone || !startDate || !endDate) {
+                alert('Please fill in all fields.');
+                return;
+            }
+            
+            let message = `Booking Request:\nName: ${name}\nPhone: ${phone}\nVehicle: ${vehicle}\nStart Date: ${startDate}\nEnd Date: ${endDate}`;
+            let whatsappURL = `https://wa.me/94723350075?text=${encodeURIComponent(message)}`;
+            
+            window.open(whatsappURL, '_blank');
+            
+            // Display confirmation message after the booking is submitted
+            document.getElementById('confirmationMessage').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
