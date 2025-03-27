@@ -13,11 +13,12 @@
             background-image: url('https://www.autorentals.gr/sliders/slide1-917117.jpg'); /* Add your background image URL here */
             background-size: cover;
             background-position: center;
+            margin: 0;
         }
         .container {
             max-width: 400px;
             margin: auto;
-            padding: 45px;
+            padding: 25px;
             background: white;
             border-radius: 10px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -56,18 +57,36 @@
         .business-name {
             font-size: 28px;
             font-weight: bold; /* Bold the text */
-            color: rgb(28, 27, 26);
+            color: rgb(191, 232, 12);
             padding: 10px;
             border-radius: 5px;
             margin-bottom: 20px;
             display: inline-block;
         }
-        .note {
-            font-size: 16px;
-            color: #555;
-            margin-top: 15px;
-            font-style: italic;
-            display: none;
+        /* Mobile-Friendly Styles */
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            .container {
+                max-width: 100%;
+                padding: 15px;
+            }
+            h2 {
+                font-size: 20px;
+            }
+            .business-name {
+                font-size: 24px;
+                padding: 8px;
+                margin-bottom: 15px;
+            }
+            label {
+                font-size: 14px;
+            }
+            select, input, button {
+                font-size: 14px;
+                padding: 8px;
+            }
         }
     </style>
 </head>
@@ -109,8 +128,6 @@
 
             <button type="button" onclick="sendBooking()">Book Now</button>
         </form>
-
-        <p class="note" id="confirmationMessage">Booking request received! Our team will contact you ASAP to confirm the availability of your chosen vehicle.</p>
     </div>
 
     <script>
@@ -130,9 +147,6 @@
             let whatsappURL = `https://wa.me/94723350075?text=${encodeURIComponent(message)}`;
             
             window.open(whatsappURL, '_blank');
-            
-            // Display confirmation message after the booking is submitted
-            document.getElementById('confirmationMessage').style.display = 'block';
         }
     </script>
 </body>
